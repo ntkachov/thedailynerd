@@ -18,7 +18,7 @@ $(function(){
 
     function buildBlog(blog){
         for(var post in blog) {
-              $("#blogContent").append(blog[title]);
+              $("#blogContent").append(blog["title"]);
         }
     }
 });
