@@ -270,6 +270,10 @@ a.purp_link_bold {
     box-shadow: 0 1px 5px rgba(0,0,0, 0.3);
     border-radius:2px;
 }
+.circle_profile{
+    width:150px;
+    border-radius:1000px;
+}
 
 @media (max-width:1100px) {
     .content{
