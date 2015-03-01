@@ -10,8 +10,11 @@ Testing
      $.ajax({
          url: "testJSON.json",
          success: function(data){
-               console.log(data);
-         }
+             $("body").append(JSON.Stringify(data));
+         },
+         fail: function(e){
+             console.log(e);
+         },
      });
  });
  </script>
