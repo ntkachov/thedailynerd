@@ -12,6 +12,10 @@ Testing
          success: function(data){
              $("body").append(JSON.Stringify(data));
          },
+         done: function() { console.log("Finished Ajax call"); }, 
+         error: function (jqXHR, status, error){ 
+                console.log( status + error);
+         },
          fail: function(e){
              console.log(e);
          },
