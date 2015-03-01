@@ -1,26 +1,27 @@
-<Html> 
-<head> 
-</head> 
-<body> 
-Testing
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>The Daily Nerd</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, inital-scale=1, maximum-scale=1">
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+    <body>
 
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
- <script>
- $(function(){
-     $.ajax({
-         url: "blog.json",
-         success: function(data){
-             $("body").append(JSON.stringify(data));
-         },
-         done: function() { console.log("Finished Ajax call"); }, 
-         error: function (jqXHR, stat, error){ 
-                console.log(error);
-         },
-         fail: function(e){
-             console.log(e);
-         },
-     });
- });
- </script>
-</body>
+    <div class="side_info">
+        <div class="circle_profile"> 
+            <img width="150" height="150"/> 
+        </div>
+        <h1> Nick Tkachov </h1> 
+        <p class="noindent"> <img src="http://developer.android.com/favicon.ico" ><span class="greentext"> Android Engineer</span> <a class="purp_link_bold" href="https://twitter.com/RetailMeNotInc"> @RetailMeNot </a> </p>
+    </div> 
+    <div id="blogContent"></div>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+<script src="js/blog.js"></script>
+    </body>
 </html>

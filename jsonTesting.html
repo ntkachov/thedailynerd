@@ -1,0 +1,26 @@
+<Html> 
+<head> 
+</head> 
+<body> 
+Testing
+
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+ <script>
+ $(function(){
+     $.ajax({
+         url: "blog.json",
+         success: function(data){
+             $("body").append(JSON.stringify(data));
+         },
+         done: function() { console.log("Finished Ajax call"); }, 
+         error: function (jqXHR, stat, error){ 
+                console.log(error);
+         },
+         fail: function(e){
+             console.log(e);
+         },
+     });
+ });
+ </script>
+</body>
+</html>
