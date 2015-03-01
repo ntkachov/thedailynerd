@@ -280,7 +280,9 @@ a.purp_link_bold {
         width:auto;
     }
     .side_info{
+        background-image: url("bg.jpg");
         width:100%;
+        padding:0;
     }
     .blog {
         width:auto;
