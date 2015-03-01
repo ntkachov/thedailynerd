@@ -13,8 +13,8 @@ Testing
              $("body").append(JSON.Stringify(data));
          },
          done: function() { console.log("Finished Ajax call"); }, 
-         error: function (jqXHR, status, error){ 
-                console.log( status + error);
+         error: function (jqXHR, stat, error){ 
+                console.log(error);
          },
          fail: function(e){
              console.log(e);
