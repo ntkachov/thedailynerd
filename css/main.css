@@ -227,7 +227,8 @@ ul.blogpost li{
 	position:relative;
 	display:block;
 	padding:1.5em;
-    margin:.5em;
+	margin:.5em;
+	cursor: pointer;
 }
 ul.blogpost li h1{
 	display:inline;
