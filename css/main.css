@@ -10,10 +10,10 @@ html { font-size: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 10
 html, button, input, select, textarea { font-family: sans-serif; color: #222; }
 body {  }
 
-a { color:#000099; text-decoration:none;}
+a { color:#0000DD; text-decoration:none;}
 a.link { color: #06e; background: #BBB;}
 a.link:hover { text-decoration:underline;}
-a:visited { color:inherit;  }
+a:visited { color:#000099;  }
 a:hover { color: #06e; }
 a:focus { outline: thin dotted; }
 a:hover, a:active { outline: 0; }
