@@ -1,10 +1,10 @@
 $(function(){
-    var stripHTML = new RegExp('<.*?>', "g");
-
+    var blog;
     $.ajax({
         url: "blog.json",
         success: function(data){
            // $("body").append(JSON.stringify(data));
+            blog = data;
             buildBlog(data);
         },
         done: function() {
@@ -18,27 +18,43 @@ $(function(){
         },
     });
 
+    window.onhashchange = function(){
+        console.log(location.hash);
+        if(location.hash == ""){
+            showAll();
+        } else {
+            setUri(location.hash);
+        }
+    }
+
     function buildBlog(blog){
         for(var post in blog) {
                 post = blog[post];
-                var blurb = post.blurb.replace(stripHTML,"") 
-                var postElement = $('<li class="blogTitle card"><h1>'
+                var uri = + post.uri;
+                var postElement = $('<li id=' + post.uri+ ' class="blogTitle card"><h1>'
                   + post.title + '</h1><div id="blurb">'
-                  + blurb + '</div><div id="body" class="postBody">'
+                  + post.blurb + '</div><div id="body" class="postBody" style="display: none">'
                   + post.body + '</div></li>');
-                postElement.find("#body").hide();
-                postElement.click(function(){
-                    var clickTarget = $(this);
-                    clickTarget.siblings().toggle(250);
-                    clickTarget.find("#body").toggle(250 , function(){
-                    $('html, body').animate({
-                                scrollTop: clickTarget.offset().top
-                                    }, 250);
-                    });
-                });
 
+                postElement.click(function(){
+                    var id = $(this).attr('id');
+                    location.hash = "#" + id;
+                });
               $("#blogContent").append(postElement);
 
         }
     }
+
+    function showAll(){
+        $("#blogContent").children().show(250);
+        $("#blogContent").find(".postBody").hide(250);
+    }
+
+    function setUri(uri){
+        $(uri).find("#body").show(250);
+        $(uri).siblings().hide(250);
+    }
+
+    
+
 });
