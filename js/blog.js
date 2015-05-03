@@ -51,6 +51,7 @@ $(function(){
     }
 
     function setUri(uri){
+        $(uri).show(250);
         $(uri).find("#body").show(250);
         $(uri).siblings().hide(250);
     }
