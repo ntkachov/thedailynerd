@@ -6,6 +6,7 @@ $(function(){
            // $("body").append(JSON.stringify(data));
             blog = data;
             buildBlog(data);
+            checkHash();
         },
         done: function() {
              console.log("Finished Ajax call"); 
@@ -18,23 +19,21 @@ $(function(){
         },
     });
 
-    window.onhashchange = function(){
-        console.log(location.hash);
-        if(location.hash == ""){
-            showAll();
-        } else {
-            setUri(location.hash);
-        }
-    }
+    window.onhashchange = checkHash;
+    
 
     function buildBlog(blog){
         for(var post in blog) {
                 post = blog[post];
                 var uri = + post.uri;
-                var postElement = $('<li id=' + post.uri+ ' class="blogTitle card"><h1>'
-                  + post.title + '</h1><div id="blurb">'
-                  + post.blurb + '</div><div id="body" class="postBody" style="display: none">'
-                  + post.body + '</div></li>');
+                var postElement = $(
+                 '<li id=' + post.uri+ ' class="blogTitle card">'+ 
+                 '<div class="postTitle">' +
+                 '<h3>' + post.time + '</h3>' +
+                 '<h1>' + post.title + '</h1>' + 
+                 '</div>' +
+                 '<div id="blurb">' + post.blurb + '</div>' + 
+                 '<div id="body" class="postBody" style="display: none">' + post.body + '</div></li>');
 
                 postElement.click(function(){
                     var id = $(this).attr('id');
@@ -42,6 +41,14 @@ $(function(){
                 });
               $("#blogContent").append(postElement);
 
+        }
+    }
+    
+    function checkHash(){
+        if(location.hash == ""){
+            showAll();
+        } else {
+            setUri(location.hash);
         }
     }
 

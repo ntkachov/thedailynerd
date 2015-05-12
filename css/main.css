@@ -23,9 +23,8 @@ ins { background: #ff9; color: #000; text-decoration: none; }
 mark { background: #ff0; color: #000; font-style: italic; font-weight: bold; }
 pre, code, kbd, samp { font-family: monospace, serif; _font-family: 'courier new', monospace; font-size: 1em; }
 pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; }
-p{ margin:0; padding:5px; display:block; text-indent:30px;}
+p{ margin:0; padding:10px 0px 0px 0px; display:block; text-indent:30px;}
 .postBody p:before{
-    content:"-";
 }
 p.noindent { text-indent:0px;}
 q { quotes: none; }
@@ -73,6 +72,8 @@ ul li{margin:0; padding:0;}
 div{
 	position:relative;
 }
+
+
 body{
     /*width:900px; */
 	position:relative;
@@ -113,8 +114,9 @@ h3{
 	padding:0;
 	margin:0;
 	text-transform: uppercase;
-	font-size:1.3em;
+	font-size:.9em;
 	font-weight:500;
+    color:#aaa;
 }
 h4{
 	padding:0;
@@ -231,10 +233,14 @@ ul.blogpost li{
 	cursor: pointer;
 }
 ul.blogpost li h1{
-	display:inline;
-	margin-right:5px;
-    margin-bottom:1em;
+	display:block;
+    padding:0;
+    margin:0 0 0px 0;
     color:#0E0E0E;
+}
+ul.blogpost li h3{
+    display: inline-block;
+    float:right;
 }
 ul.blogpost li p{
     text-indent:0px;
@@ -258,6 +264,10 @@ ul.blogpost li:nth-child(4n){
 
 ul.blogpost li:nth-child(5n){
     border-bottom:1px solid #f40; //Red
+}
+
+ul.blogpost li div.postTitle{
+    padding-bottom:15px;
 }
 
 .project_block {
